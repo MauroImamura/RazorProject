@@ -1,0 +1,24 @@
+﻿@page "~/categorias/{skip?}/{take?}"
+@model MyApp.Namespace.CategoriesModel
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+<h1>Categorias</h1>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td><td>Nome</td><td>Preço</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in @Model.Categories)
+            {   
+                <tr>
+                    <td>@item.Id</td><td>@item.Title</td><td>@item.Price.ToString("C", provider: new CultureInfo(name: "pt-BR"))</td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>

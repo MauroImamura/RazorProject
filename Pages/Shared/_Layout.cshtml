@@ -2,7 +2,9 @@
 
 <html>
     <head>
-        <title>RazorProject</title>
+        <title>@ViewData["Title"] - RazorProject</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/RazorProject.styles.css" asp-append-version="true" />
     </head>
     <body>
         <header>
@@ -11,5 +13,9 @@
         <main>
             @RenderBody()
         </main>
+        <footer>
+            ®2023 - Powered by MauroT.
+        </footer>
+        @RenderSection(name: "scripts", required: false)
     </body>
 </html>
